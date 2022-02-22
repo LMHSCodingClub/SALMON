@@ -46,15 +46,51 @@ class Salmon
       
      //compare. Maybe make a tree map???
      TreeSet<Integer> totalDist = new TreeSet<Integer>();
-      totalDist.add(acc1);
-      totalDist.add(acc2);
-      totalDist.add(acc3);
-      totalDist.add(acc4);
+      totalDist.add(one.getDistance());
+      totalDist.add(two.getDistance());
+      totalDist.add(three.getDistance());
+      totalDist.add(four.getDistance());
       
+      //get biggest two
+      //make them "up"
       
-      
-     
+      int biggest = totalDist.get(0);
+          switch (biggest) {
+            case one.getDistance():  
+                     one.setDirection("up");
+                     break;
+            case two.getDistance():  
+                     two.setDirection("up");
+                     break;
+            case three.getDistance():   
+                     three.setDirection("up");
+                     break;
+            case four.getDistance(): 
+                     four.setDirection("up");
+                     break;
+             default:
+                     break;
+                
      //output
+   }
+      
+      int biggest2 = totalDist.get(1);
+           switch (biggest2) {
+             case one.getDistance():  
+                     one.setDirection("up");
+                     break;
+            case two.getDistance():  
+                     two.setDirection("up");
+                     break;
+            case three.getDistance():   
+                     three.setDirection("up");
+                     break;
+            case four.getDistance(): 
+                     four.setDirection("up");
+                     break;
+              default:
+                     break;
+         
    }
            
    void InitalizeRooms()
