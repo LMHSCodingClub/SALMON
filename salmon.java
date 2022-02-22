@@ -9,12 +9,16 @@ class Salmon
    public static void main (String str[]) throws IOException 
    {
      
-      double acc1 = 0;
-      double acc2 = 0;
-      double acc3 = 0;
-      double acc4 = 0;
+      
       //Initialize the rooms, numbers, and distances
-     InitializeRooms();
+      new Room room101 = Room(101,10); 
+         
+      new Stairway one = Stairway("1");
+      new Stairway two = Stairway("2");
+      new Stairway three = Stairway("3");
+      new Stairway four = Stairway("4");
+     
+     //new Building LoMo = Building();
       
      //Read array for student directions
      //Array syntax: each collumn is a student's schedule for two periods (by room number). 
@@ -25,18 +29,18 @@ class Salmon
         if(schedule[0][i].getFloor() == 1 && schedule[1][i].getFloor == 2)
         {
            //subtract from accumulator 
-           acc1 -= schedule[0][i].getDist1() + schedule[1][i].getDist1();
-           acc2 -= schedule[0][i].getDist2() + schedule[1][i].getDist2();
-           acc3 -= schedule[0][i].getDist3() + schedule[1][i].getDist3();
-           acc4 -= schedule[0][i].getDist4() + schedule[1][i].getDist4();
+           one.subDistance( schedule[0][i].getDist1() + schedule[1][i].getDist1() );
+           two.subDistance( schedule[0][i].getDist2() + schedule[1][i].getDist2() );
+           three.subDistance( schedule[0][i].getDist3() + schedule[1][i].getDist3() );
+           four.subDistance( schedule[0][i].getDist4() + schedule[1][i].getDist4() );
         }
         else if(schedule[0][i].getFloor() == 2 && schedule[1][i].getFloor == 1)
         {
            //add to accumulator
-           acc1 += schedule[0][i].getDist1() + schedule[1][i].getDist1();
-           acc2 += schedule[0][i].getDist2() + schedule[1][i].getDist2();
-           acc3 += schedule[0][i].getDist3() + schedule[1][i].getDist3();
-           acc4 += schedule[0][i].getDist4() + schedule[1][i].getDist4();
+           one.addDistance( schedule[0][i].getDist1() + schedule[1][i].getDist1() );
+           two.addDistance( schedule[0][i].getDist2() + schedule[1][i].getDist2() );
+           three.addDistance( schedule[0][i].getDist3() + schedule[1][i].getDist3() );
+           four.addDistance( schedule[0][i].getDist4() + schedule[1][i].getDist4() );
         }
         else
         {
@@ -70,11 +74,9 @@ class Salmon
                      break;
              default:
                      break;
+          }  
                 
-     //output
-   }
-      
-      int biggest2 = totalDist.get(1);
+       int biggest2 = totalDist.get(1);
            switch (biggest2) {
              case one.getDistance():  
                      one.setDirection("up");
@@ -90,14 +92,14 @@ class Salmon
                      break;
               default:
                      break;
+           }
+     //output
+
+      
+      
          
    }
-           
-   void InitalizeRooms()
-   {
-    //we initialize every room          
-              
-   }
+          
   
 }
 
