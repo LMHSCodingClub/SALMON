@@ -24,6 +24,11 @@ public class Stairway
     distance += add;
   }
   
+  public void subDistance(double sub)
+  {
+    distance -= sub;
+  }
+  
   public void setDirection(boolean input)
   {
    up = input; 
