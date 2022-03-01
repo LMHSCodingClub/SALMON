@@ -11,14 +11,18 @@ class Salmon
      
       
       //Initialize the rooms, numbers, and distances
-      new Room room101 = Room(101,10); 
+      ArrayList<Room> Rooms = new ArrayList<Room>();
+      
+      Room room101 = new Room(101,10); 
          
-      new Stairway one = Stairway("1");
-      new Stairway two = Stairway("2");
-      new Stairway three = Stairway("3");
-      new Stairway four = Stairway("4");
+      
+      
+      Stairway one = new Stairway("1"); // Stairway #2
+      Stairway two = new Stairway("2"); // Stairway # 5
+      Stairway three = new Stairway("3"); // Stairway #8
+      Stairway four = new Stairway("4"); // Stairway #16
      
-     //new Building LoMo = Building();
+     
       
      //Read array for student directions
      //Array syntax: each collumn is a student's schedule for two periods (by room number). 
