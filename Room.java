@@ -26,7 +26,59 @@ public class Room
       if(number/100 = 1) // on floor 1
       {
         floor = 1;
-        //calculate distances
+        //          Lang Hallway
+        if ( (number > 120 && number < 129) || (number == 199))
+        {
+         //calculate distances
+         
+           //Auditorium
+           if (number == 199)
+           {
+             distance1 += 15.75;
+             distance2 += 15.75;
+             distance3 += 15.75;
+             distance4 += 15.75;
+           }
+
+           //Lang Hallway
+           else if (number > 122 && number < 129)
+           {
+             distance1 += 15.75 + 29.55;
+             distance2 += 15.75 + 29.55;
+             distance3 += 15.75 + 29.55;
+             distance4 += 15.75 + 29.55;
+           }
+
+           //Music Hall
+           else //if (number == 121 || number == 122)
+           {
+             distance1 += 20;
+             distance2 += 20;
+             distance3 += 20;
+             distance4 += 20;
+           }
+           
+           if (number == 122)
+           {
+             distance1 += 19;
+             distance2 += 19;
+             distance3 += 19;  
+             distance4 += 19;
+           }
+           //20, 39  
+           
+           //account for nexus distances
+           distance1 += 80;
+           distance2 += 80 + 40.5;
+           distance3 += 22 + 40.5;
+           distance4 += 22;
+        }
+        else //any other number on floor 1
+        {
+           
+           
+           
+        }
       }
       else
       {
