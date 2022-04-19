@@ -9,6 +9,11 @@ public class Room
    final static double TOP_WIDTH = 37.7;
    final static double TOP_SPEC_CASE = 6; // for rooms 214 and 221
    
+   final static double BOTTOM_LENGTH_SQR = 36.9;
+   final static double BOTTOM_LENGTH_HALL = 45;
+   final static double BOTTOM_WIDTH = 40.5;
+
+   
    public int number = 0;
    public int floor = 0;
    
@@ -76,8 +81,67 @@ public class Room
         else //any other number on floor 1
         {
            
-           
-           
+           final double STAIRCASE_3_4_RIGHT = 22;
+           final double STAIRCASE_3_4_LEFT = BOTTOM_LENGTH_SQR - STAIRCASE_4_RIGHT;
+
+           // Designators are taken relative to the bottom-left corner of the square
+           if(number <= 103)
+           {
+             distance1 = BOTTOM_LENGTH_HALL - designate;
+             distance2 = BOTTOM_LENGTH_HALL + designate + BOTTOM_WIDTH;
+             distance3 = STAIRCASE_3_4_LEFT + designate + BOTTOM_WIDTH;
+             distance4 = designate + STAIRCASE_3_4_LEFT;
+           }
+           else if(number == 105) //104 does not exist. MAybe make it the band room?
+           {
+             distance1 = BOTTOM_LENGTH_HALL + designate;
+             distance2 = BOTTOM_LENGTH_HALL + designate + BOTTOM_WIDTH;
+             distance3 = STAIRCASE_3_4_LEFT + designate + BOTTOM_WIDTH;
+             distance4 = STAIRCASE_3_4_LEFT - designate; 
+           }
+           else if(number == 106 || number == 108) //106 is the lower art room, which is also 108 for some reason
+           {
+             distance1 = BOTTOM_LENGTH_HALL + designate;
+             distance2 = BOTTOM_LENGTH_HALL - designate + BOTTOM_WIDTH;
+             distance3 = STAIRCASE_3_4_LEFT - designate + BOTTOM_WIDTH;
+             distance4 = STAIRCASE_3_4_LEFT + designate; 
+           }
+           else if(number == 107) //107 is the cafeteria. Special case
+           {
+             distance1 = ;
+             distance2 = ;
+             distance3 = ;
+             distance4 = ; 
+           }
+           else if(number == 109)
+           {
+             distance1 = BOTTOM_LENGTH_HALL + designate;
+             distance2 = BOTTOM_LENGTH_HALL + designate + BOTTOM_WIDTH;
+             distance3 = STAIRCASE_3_4_LEFT + designate + BOTTOM_WIDTH;
+             distance4 = STAIRCASE_3_4_LEFT - designate; 
+           }
+           else if(number <= 118) // designate reffers to the width dispacement relative to the bottom left corner
+           {
+             distance1 = ;
+             distance2 = ;
+             distance3 = ;
+             distance4 = ; 
+           }
+           else if(number <= 120)
+           {
+             distance1 = ;
+             distance2 = ;
+             distance3 = ;
+             distance4 = ; 
+           }
+           else if(number == 121) //"Planeterium", A.K.A Blair's room
+           {
+             distance1 = ;
+             distance2 = ;
+             distance3 = ;
+             distance4 = ; 
+           }
+
         }
       }
       else
