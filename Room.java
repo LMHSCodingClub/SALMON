@@ -82,7 +82,7 @@ public class Room
         {
            
            final double STAIRCASE_3_4_RIGHT = 22;
-           final double STAIRCASE_3_4_LEFT = BOTTOM_LENGTH_SQR - STAIRCASE_4_RIGHT;
+           final double STAIRCASE_3_4_LEFT = BOTTOM_LENGTH_SQR - STAIRCASE_3_4_RIGHT;
 
            // Designators are taken relative to the bottom-left corner of the square
            if(number <= 103)
@@ -106,7 +106,7 @@ public class Room
              distance3 = STAIRCASE_3_4_LEFT - designate + BOTTOM_WIDTH;
              distance4 = STAIRCASE_3_4_LEFT + designate; 
            }
-           else if(number == 107) //107 is the cafeteria. Special case
+           else if(number == 107) //107 is the cafeteria. Special case. Designate is width-displacement
            {
              distance1 = ;
              distance2 = ;
@@ -122,17 +122,17 @@ public class Room
            }
            else if(number <= 118) // designate reffers to the width dispacement relative to the bottom left corner
            {
-             distance1 = ;
-             distance2 = ;
-             distance3 = ;
-             distance4 = ; 
+             distance1 = BOTTOM_LENGTH_HALL + BOTTOM_LENGTH_SQR + designate;
+             distance2 = BOTTOM_LENGTH_HALL + BOTTOM_LENGTH_SQR + BOTTOM_WIDTH - designate;
+             distance3 = STAIRCASE_3_4_RIGHT + BOTTOM_WIDTH - designate;
+             distance4 = STAIRCASE_3_4_RIGHT + designate; 
            }
-           else if(number <= 120)
+           else if(number <= 120) // designate is horizontal displacenent from the left corner. Rooms 119 and 120
            {
-             distance1 = ;
-             distance2 = ;
-             distance3 = ;
-             distance4 = ; 
+             distance1 = BOTTOM_LENGTH_HALL + designate + BOTTOM_WIDTH;
+             distance2 = BOTTOM_LENGTH_HALL + designate;
+             distance3 = designate - STAIRCASE_3_4_LEFT;
+             distance4 = BOTTOM_LENGTH_SQR - designate + BOTTOM_WIDTH + STAIRCASE_3_4_RIGHT; 
            }
            else if(number == 121) //"Planeterium", A.K.A Blair's room
            {
@@ -141,7 +141,6 @@ public class Room
              distance3 = ;
              distance4 = ; 
            }
-
         }
       }
       else
