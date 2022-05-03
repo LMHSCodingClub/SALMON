@@ -83,6 +83,8 @@ public class Room
            
            final double STAIRCASE_3_4_RIGHT = 22;
            final double STAIRCASE_3_4_LEFT = BOTTOM_LENGTH_SQR - STAIRCASE_3_4_RIGHT;
+           final double CAFE_TOP_LEFT = 13;
+           final double CAFE_SIDE_TO_HALL = 9;
 
            // Designators are taken relative to the bottom-left corner of the square
            if(number <= 103)
@@ -108,10 +110,10 @@ public class Room
            }
            else if(number == 107) //107 is the cafeteria. Special case. Designate is width-displacement
            {
-             distance1 = ;
-             distance2 = ;
-             distance3 = ;
-             distance4 = ; 
+             distance1 = BOTTOM_LENGTH_HALL + CAFE_SIDE_TO_HALL;
+             distance2 = CAFE_TOP_LEFT;
+             distance3 = STAIRCASE_3_4_LEFT + CAFE_SIDE_TO_HALL;
+             distance4 = STAIRCASE_3_4_LEFT + BOTTOM_WIDTH + CAFE_SIDE_TO_HALL;
            }
            else if(number == 109)
            {
@@ -134,12 +136,12 @@ public class Room
              distance3 = designate - STAIRCASE_3_4_LEFT;
              distance4 = BOTTOM_LENGTH_SQR - designate + BOTTOM_WIDTH + STAIRCASE_3_4_RIGHT; 
            }
-           else if(number == 121) //"Planeterium", A.K.A Blair's room
+           else if(number == 121) //"Planeterium", A.K.A Blair's room -- NOTE: 121 and 122 are music rooms, use different number?
            {
-             distance1 = ;
-             distance2 = ;
-             distance3 = ;
-             distance4 = ; 
+             distance1 = 2 * BOTTOM_LENGTH_HALL + BOTTOM_WIDTH - 3; //3 is Distance from Stair#2 to Blair's room
+             distance2 = 3;
+             distance3 = BOTTOM_LENGTH_HALL + STAIRCASE_3_4_LEFT - 3;
+             distance4 = BOTTOM_LENGTH_HALL + BOTTOM_WIDTH + STAIRCASE_3_4_LEFT - 3;
            }
         }
       }
