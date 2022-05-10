@@ -62,7 +62,7 @@ class Salmon
       //get biggest two
       //make them "up"
       
-      int biggest = totalDist.get(0);
+      int biggest = totalDist.get(3);
           switch (biggest) {
             case one.getDistance():  
                      one.setDirection("up");
@@ -80,7 +80,7 @@ class Salmon
                      break;
           }  
                 
-       int biggest2 = totalDist.get(1);
+       int biggest2 = totalDist.get(2);
            switch (biggest2) {
              case one.getDistance():  
                      one.setDirection("up");
@@ -97,11 +97,12 @@ class Salmon
               default:
                      break;
            }
-     //output
-
       
+      System.out.println("Stairway #1: " + one.up);
+      System.out.println("Stairway #2: " + two.up);
+      System.out.println("Stairway #3: " + three.up);
+      System.out.println("Stairway #4: " + four.up);
       
-         
    }
           
   
