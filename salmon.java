@@ -30,7 +30,7 @@ class Salmon
      //calculate distances from room to room via different stairs
      for(int i = 0; i < schedule[0].length; i++)
      {
-        if(schedule[0][i].getFloor() == 1 && schedule[1][i].getFloor == 2)
+        if(schedule[0][i].getFloor() == 1 && schedule[1][i].getFloor() == 2)
         {
            //subtract from accumulator 
            one.subDistance( schedule[0][i].getDist1() + schedule[1][i].getDist1() );
@@ -38,7 +38,7 @@ class Salmon
            three.subDistance( schedule[0][i].getDist3() + schedule[1][i].getDist3() );
            four.subDistance( schedule[0][i].getDist4() + schedule[1][i].getDist4() );
         }
-        else if(schedule[0][i].getFloor() == 2 && schedule[1][i].getFloor == 1)
+        else if(schedule[0][i].getFloor() == 2 && schedule[1][i].getFloor() == 1)
         {
            //add to accumulator
            one.addDistance( schedule[0][i].getDist1() + schedule[1][i].getDist1() );
